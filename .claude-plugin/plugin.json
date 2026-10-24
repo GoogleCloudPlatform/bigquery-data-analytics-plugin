@@ -26,18 +26,8 @@
   },
   "mcpServers": {
     "bigquery": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@toolbox-sdk/server@1.10.0",
-        "--prebuilt",
-        "bigquery",
-        "--stdio"
-      ],
-      "env": {
-        "BIGQUERY_PROJECT": "${user_config.bigquery_project}",
-        "BIGQUERY_LOCATION": "${user_config.bigquery_location}"
-      }
+      "type": "http",
+      "url": "https://bigquery.googleapis.com/mcp"
     }
   }
 }
