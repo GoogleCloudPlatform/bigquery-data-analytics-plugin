@@ -27,7 +27,8 @@
   "mcpServers": {
     "bigquery": {
       "type": "http",
-      "url": "https://bigquery.googleapis.com/mcp"
+      "url": "https://bigquery.googleapis.com/mcp",
+      "headersHelper": "./scripts/adc-headers.sh"
     }
   }
 }
