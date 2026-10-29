@@ -10,20 +10,6 @@
   "repository": "https://github.com/gemini-cli-extensions/bigquery-data-analytics",
   "license": "Apache-2.0",
   "skills": "./skills/",
-  "userConfig": {
-    "bigquery_project": {
-      "title": "Project ID",
-      "description": "ID of the Google Cloud project",
-      "type": "string",
-      "sensitive": false
-    },
-    "bigquery_location": {
-      "title": "Location",
-      "description": "(Optional) Location of the BigQuery resources",
-      "type": "string",
-      "sensitive": false
-    }
-  },
   "mcpServers": {
     "bigquery": {
       "type": "http",
