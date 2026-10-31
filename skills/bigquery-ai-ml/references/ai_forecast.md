@@ -24,47 +24,16 @@ FROM
 
 ### Input Arguments
 
-| Argument               | Requirement  | Type          | Description       |
+| Argument | Requirement | Type | Description |
 | :--------------------- | :----------- | :------------ | :---------------- |
-| **`input_data`**       | **Required** |               | The source table  |
-:                        :              :               : or subquery       :
-:                        :              :               : containing        :
-:                        :              :               : historical data.  :
-| **`data_col`**         | **Required** | String        | The numeric       |
-:                        :              :               : column to         :
-:                        :              :               : predict.          :
-| **`timestamp_col`**    | **Required** | String        | The column        |
-:                        :              :               : containing        :
-:                        :              :               : dates/timestamps. :
-| **`id_cols`**          | Optional     | Array<String> | Grouping columns  |
-:                        :              :               : for multiple      :
-:                        :              :               : series (e.g.,     :
-:                        :              :               : `['store_id']`).  :
-| **`horizon`**          | Optional     | Int64         | Number of future  |
-:                        :              :               : points to         :
-:                        :              :               : predict. Defaults :
-:                        :              :               : to 10. The valid  :
-:                        :              :               : input range is    :
-:                        :              :               : [1, 10,000]       :
-| **`confidence_level`** | Optional     | Float64       | Confidence        |
-:                        :              :               : interval (0 to    :
-:                        :              :               : 1). Defaults to   :
-:                        :              :               : 0.95.             :
-| **`model`**            | Optional     | String        | Model version.    |
-:                        :              :               : Defaults to       :
-:                        :              :               : `'TimesFM 2.0'`.  :
-| **`context_window`**   | Optional     | Int64         | The number of     |
-:                        :              :               : historical data   :
-:                        :              :               : points the model  :
-:                        :              :               : uses to forecast. :
-:                        :              :               : The min value is  :
-:                        :              :               : 64 and the max    :
-:                        :              :               : value is 2048 for :
-:                        :              :               : `'TimesFM 2.0'`.  :
-:                        :              :               : If not set, the   :
-:                        :              :               : model determines  :
-:                        :              :               : this              :
-:                        :              :               : automatically.    :
+| **`input_data`** | **Required** | | The source table or subquery containing historical data. |
+| **`data_col`** | **Required** | String | The numeric column to predict. |
+| **`timestamp_col`** | **Required** | String | The column containing dates/timestamps. |
+| **`id_cols`** | Optional | Array<String> | Grouping columns for multiple series (e.g., `['store_id']`). |
+| **`horizon`** | Optional | Int64 | Number of future points to predict. Defaults to 10. The valid input range is [1, 10,000]. |
+| **`confidence_level`** | Optional | Float64 | Confidence interval (0 to 1). Defaults to 0.95. |
+| **`model`** | Optional | String | Model version. Defaults to `TimesFM 2.0`. |
+| **`context_window`** | Optional | Int64 | The number of historical data points the model uses to forecast. The min value is 64 and the max value is 2048 for `TimesFM 2.0`. If not set, the model determines this automatically. |
 
 ### Output Schema
 

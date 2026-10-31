@@ -36,25 +36,16 @@ Argument                     | Requirement  | Type          | Description
 
 ### Output Schema
 
-| Column                           | Type       | Description                  |
-| :------------------------------- | :--------- | :--------------------------- |
-| **`id_cols`**                    | (As Input) | Original identifiers for the |
-:                                  :            : series.                      :
-| **`time_series_timestamp`**      | TIMESTAMP  | Timestamp for the analyzed   |
-:                                  :            : points.                      :
-| **`time_series_data`**           | FLOAT64    | The original data value.     |
-| **`is_anomaly`**                 | BOOL       | TRUE if the point is         |
-:                                  :            : identified as an anomaly.    :
-| **`lower_bound`**                | FLOAT64    | Lower bound of the expected  |
-:                                  :            : range.                       :
-| **`upper_bound`**                | FLOAT64    | Upper bound of the expected  |
-:                                  :            : range.                       :
-| **`anomaly_probability`**        | FLOAT64    | Probability that the point   |
-:                                  :            : is an anomaly.               :
-| **`ai_detect_anomalies_status`** | STRING     | Error messages or empty      |
-:                                  :            : string on success. A minimum :
-:                                  :            : of 3 data points is          :
-:                                  :            : required.                    :
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **`id_cols`** | (As Input) | Original identifiers for the series. |
+| **`time_series_timestamp`** | TIMESTAMP | Timestamp for the analyzed points. |
+| **`time_series_data`** | FLOAT64 | The original data value. |
+| **`is_anomaly`** | BOOL | TRUE if the point is identified as an anomaly. |
+| **`lower_bound`** | FLOAT64 | Lower bound of the expected range. |
+| **`upper_bound`** | FLOAT64 | Upper bound of the expected range. |
+| **`anomaly_probability`** | FLOAT64 | Probability that the point is an anomaly. |
+| **`ai_detect_anomalies_status`** | STRING | Error messages or empty string on success. A minimum of 3 data points is required. |
 
 ## Examples
 
