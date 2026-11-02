@@ -1,5 +1,6 @@
 {
   "name": "bigquery-data-analytics",
+  "displayName": "BigQuery",
   "version": "0.2.5",
   "description": "Connect, query, and generate data insights for BigQuery datasets and data.",
   "author": {
