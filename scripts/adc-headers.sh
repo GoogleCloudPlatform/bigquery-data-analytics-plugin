@@ -17,4 +17,4 @@ if [[ -z "$QP" ]]; then
   QP="$(gcloud config get-value project 2>/dev/null || echo "")"
 fi
 
-printf '{"Authorization":"Bearer %s","x-goog-user-project":"%s"}\n' "$TOKEN" "$QP"
+printf '{"Authorization":"Bearer %s"}\n' "$TOKEN"
