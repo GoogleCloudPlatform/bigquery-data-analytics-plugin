@@ -7,7 +7,7 @@ Developers can effortlessly connect, interact, and generate data insights with [
 
 > [!IMPORTANT]
 > **We Want Your Feedback!**
-> Please share your thoughts with us by filling out our feedback [form][form]. 
+> Please share your thoughts with us by filling out our feedback [form][form].
 > Your input is invaluable and helps us improve the project for everyone.
 
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSfEGmLR46iipyNTgwTmIDJqzkAwDPXxbocpXpUbHXydiN1RTw/viewform?usp=pp_url&entry.157487=bigquery-data-analytics
@@ -21,6 +21,7 @@ Developers can effortlessly connect, interact, and generate data insights with [
   - [Claude Code](#claude-code)
   - [Codex](#codex)
 - [Installing via a compatible Agent Plugins client](#installing-via-a-compatible-agent-plugins-client)
+- [Authenticating via Application Default Credentials (ADC)](#authenticating-via-application-default-credentials-adc)
 - [Usage Examples](#usage-examples)
 - [Available Tools](#available-tools)
 - [Generating Skills Instead](#generating-skills-instead)
@@ -41,11 +42,11 @@ Before you begin, ensure you have the following:
 
 - One of these AI agents installed
   - Antigravity
-     - [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v1.6.0** or higher
-     - [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v2.0.0** or higher.
+      - [Antigravity CLI](https://github.com/google-gemini/gemini-cli) version **v1.6.0** or higher
+      - [Antigravity 2.0](https://antigravity.google/product/antigravity-2) version **v2.0.0** or higher.
   - [Claude Code](https://claude.com/product/claude-code) version **v2.1.94** or higher.
   - [Codex](https://developers.openai.com/codex) **v0.117.0** or higher.
-- [Node.js](https://nodejs.org/) — the MCP server runs via `npx`.
+- For Claude Code: Enable the **Google Cloud BigQuery** connector (under Claude Settings > Connectors).
 - A Google Cloud project with the **BigQuery API** enabled.
 - Ensure [Application Default Credentials](https://cloud.google.com/docs/authentication/gcloud) are available in your environment.
 - IAM Permissions:
@@ -76,7 +77,7 @@ To start interacting with your database, install the extension for your preferre
 
 For the latest version, check the [releases page][releases].
 
-[releases]: https://github.com/gemini-cli-extensions/bigquery-data-analytics/releases
+[releases]: https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/releases
 
 <!-- {x-release-please-start-version} -->
 
@@ -106,7 +107,7 @@ See <a href="https://antigravity.google/docs/gcli-migration">Migrating from Gemi
 Install the plugin directly from the remote GitHub repository:
 
 ```bash
-agy plugin install https://github.com/gemini-cli-extensions/bigquery-data-analytics
+agy plugin install https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin
 ```
 
 **2. Set env vars:**
@@ -121,7 +122,7 @@ You can install plugins directly from a remote GitHub repository.
 **1. Install the plugin:**
 
 ```bash
-agy plugin install https://github.com/gemini-cli-extensions/bigquery-data-analytics
+agy plugin install https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin
 ```
 
 **2. Set env vars:**
@@ -132,22 +133,27 @@ Set your environment vars as described in the [configuration section](#configura
 <details>
 <summary id="claude-code">Claude Code</summary>
 
-**1. Set env vars:**
+**1. Enable the BigQuery Connector:**
+Ensure the **Google Cloud BigQuery** connector is connected in Claude (**Settings > Connectors**).
+
+**2. Set env vars:**
 In your terminal, set your environment vars as described in the [configuration section](#configuration).
 
-**2. Start the agent:**
+**3. Start the agent:**
 
 ```bash
 claude
 ```
 
-**3. Install the plugin:**
+**4. Install the plugin:**
 
 ```bash
 /plugin install bigquery-data-analytics@claude-plugins-official
 ```
 
-_(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)
+_(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)_
+
+> 💡 **Authenticating via ADC?** If you prefer to authenticate using local Application Default Credentials (ADC) instead of the connector, configure `"headersHelper": "./scripts/adc-headers.sh"` in `.claude-plugin/plugin.json`. See [Authenticating via ADC](#authenticating-via-application-default-credentials-adc).
 </details>
 
 <details>
@@ -176,12 +182,11 @@ codex plugin marketplace upgrade data-cloud-plugins
 </details>
 
 ## Installing via a compatible Agent Plugins client
-## Installing via a compatible Agent Plugins client
 
 This repository is a valid [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) (v1) plugin. Any [Agent Plugins–compatible client](https://agent-plugins.org/compatible-clients) can install it directly using its own built-in plugin command — no extra tooling required — by pointing at this repository:
 
 ```
-https://github.com/gemini-cli-extensions/bigquery-data-analytics
+https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin
 ```
 
 Beyond harnesses covered by the native install above, compatible clients include VS Code, Cursor, GitHub Copilot, and Kiro. See your agent's documentation for its exact install command.
@@ -195,6 +200,26 @@ Set your environment vars as described in the [configuration section](#configura
 > [!NOTE]
 > * Ensure [Application Default Credentials](https://cloud.google.com/docs/authentication/gcloud) are available in your environment.
 > * See [Troubleshooting](#troubleshooting) for debugging your configuration.
+
+
+## Authenticating via Application Default Credentials (ADC)
+
+If you prefer to authenticate using local Application Default Credentials instead of the BigQuery connector, add the included `headersHelper` script to your `.claude-plugin/plugin.json`:
+
+```json
+"mcpServers": {
+  "bigquery": {
+    "type": "http",
+    "url": "https://bigquery.googleapis.com/mcp",
+    "headersHelper": "./scripts/adc-headers.sh"
+  }
+}
+```
+
+Ensure you have authenticated locally:
+```bash
+gcloud auth application-default login
+```
 
 
 ## Usage Examples
@@ -249,7 +274,7 @@ The hand-authored skills in `skills/` are unaffected and still ship with the plu
 
 ## Additional Extensions
 
-Find additional extensions to support your entire software development lifecycle at [github.com/gemini-cli-extensions](https://github.com/gemini-cli-extensions), including:
+Find additional extensions to support your entire software development lifecycle at https://github.com/gemini-cli-extensions, including:
 * [BigQuery Conversational Analytics](https://github.com/gemini-cli-extensions/bigquery-conversational-analytics)
 * and more!
 
