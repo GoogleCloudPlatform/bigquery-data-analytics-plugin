@@ -44,8 +44,8 @@ FROM
 ## Example: Evaluating Forecast Quality
 ```sql
 SELECT * FROM AI.EVALUATE(
-  (SELECT * FROM `sales` WHERE date < '2024-01-01'),
-  (SELECT * FROM `sales` WHERE date >= '2024-01-01'),
+  (SELECT * FROM `project.dataset.sales` WHERE date < '2024-01-01'),
+  (SELECT * FROM `project.dataset.sales` WHERE date >= '2024-01-01'),
   data_col => 'total_sales',
   timestamp_col => 'date',
   id_cols => ['store_id']
