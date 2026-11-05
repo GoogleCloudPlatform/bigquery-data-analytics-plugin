@@ -221,6 +221,7 @@ Ensure you have authenticated locally:
 gcloud auth application-default login
 ```
 
+Note for Windows users: Command Prompt and PowerShell cannot execute .sh scripts natively. To use the ADC fallback, you will need to run your agent from a Unix-like terminal such as WSL or Git Bash.
 
 ## Usage Examples
 
