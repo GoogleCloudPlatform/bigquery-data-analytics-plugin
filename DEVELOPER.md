@@ -97,8 +97,8 @@ automated workflows when a new release is created. Manual building is not requir
 The primary maintainers for this repository are defined in the
 [`.github/CODEOWNERS`](.github/CODEOWNERS) file:
 
-*   `@gemini-cli-extensions/senseai-eco`
-*   `@gemini-cli-extensions/bigquery-maintainers`
+*   `@GoogleCloudPlatform/senseai-eco`
+*   `@GoogleCloudPlatform/bigquery-data-analytics-plugin-maintainers`
 
 ### Releasing
 
