@@ -8,7 +8,7 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "homepage": "https://cloud.google.com/bigquery",
-  "repository": "https://github.com/gemini-cli-extensions/bigquery-data-analytics",
+  "repository": "https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin",
   "license": "Apache-2.0",
   "keywords": [
     "bigquery",

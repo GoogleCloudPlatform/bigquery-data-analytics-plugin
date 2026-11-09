@@ -30,7 +30,7 @@ body:
       description: |
         Please run through the following list and make sure you've tried the usual "quick fixes":
       options:
-        - label: "Search the [issues](https://github.com/gemini-cli-extensions/bigquery-data-analytics/issues)"
+        - label: "Search the [issues](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues)"
           required: true
 
   - type: textarea

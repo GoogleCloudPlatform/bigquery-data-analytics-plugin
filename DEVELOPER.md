@@ -21,7 +21,7 @@ The development process involves installing the extension locally into the Gemin
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/gemini-cli-extensions/bigquery-data-analytics.git
+    git clone https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin.git
     cd bigquery-data-analytics
     ```
 
@@ -97,41 +97,12 @@ automated workflows when a new release is created. Manual building is not requir
 The primary maintainers for this repository are defined in the
 [`.github/CODEOWNERS`](.github/CODEOWNERS) file:
 
-*   `@gemini-cli-extensions/senseai-eco`
-*   `@gemini-cli-extensions/bigquery-maintainers`
+*   `@GoogleCloudPlatform/senseai-eco`
+*   `@GoogleCloudPlatform/bigquery-data-analytics-plugin-maintainers`
 
 ### Releasing
 
-The release process is automated using `release-please`. It consists of an automated changelog preparation step followed by the manual merging of a Release PR.
-
-#### Automated Changelog Enrichment
-
-Before a Release PR is even created, a special workflow automatically mirrors relevant changelogs from the core `googleapis/mcp-toolbox` dependency. This ensures that the release notes for this extension accurately reflect important upstream changes.
-
-The process is handled by the [`mirror-changelog.yml`](.github/workflows/mirror-changelog.yml) workflow:
-
-1. **Trigger:** The workflow runs automatically on pull requests created by
-   Renovate for `toolbox` version updates.
-2. **Parsing:** It reads the detailed release notes that Renovate includes in
-   the PR body.
-3. **Filtering:** These release notes are filtered to include only changes
-   relevant to this extension. The relevance is determined by a keyword (e.g., `bigquery`), passed
-   as an environment variable in the workflow file.
-4. **Changelog Injection:** The script formats the filtered entries as
-   conventional commits and injects them into the PR body within a
-   `BEGIN_COMMIT_OVERRIDE` block.
-5. **Release Please:** When the main Release PR is created, `release-please`
-   reads this override block instead of the standard `chore(deps): ...` commit
-   message, effectively mirroring the filtered upstream changelog into this
-   project's release notes.
-
-> **Note for Maintainers:** The filtering script is an automation aid, but it
-> may occasionally produce "false positives" (e.g., an internal logging change
-> that happens to contain the keyword). Before merging a `toolbox` dependency
-> PR, maintainers must **review the generated `BEGIN_COMMIT_OVERRIDE` block**
-> and manually delete any lines that are not relevant to the end-users of this
-> extension. The curated override block is the final source of truth for the
-> release changelog.
+The release process is automated using `release-please`. It consists of the manual merging of a Release PR.
 
 #### Release Process
 
