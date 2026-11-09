@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.0](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/compare/0.2.5...0.3.0) (2026-11-09)
+
+
+### Release-As
+
+* 0.3.0 ([81ffaa0](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/81ffaa01c84c972e0505530a86aa84324bd74f0a))
+
+
+### Features
+
+* configure BigQuery MCP server ([#152](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues/152)) ([b487156](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/b487156e8dd5551e2a12eeca0b8a7cbc1dccee5a))
+* Require BigQuery connector and make ADC headersHelper optional ([#155](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues/155)) ([9d55362](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/9d55362f93e5f536d6f02d2d7f396cd0359182f5))
+* update BQ AI skills ([#153](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues/153)) ([d9a590e](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/d9a590ee6cb1d5df68c487328f268b7c6f19af9c))
+* update skill frontmatter ([#162](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues/162)) ([ccb0108](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/ccb01087cd53d2b8d56d587d754c0b66e313254c))
+
 ## [0.2.5](https://github.com/gemini-cli-extensions/bigquery-data-analytics/compare/0.2.4...0.2.5) (2026-09-04)
 
 
