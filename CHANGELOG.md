@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/compare/0.3.0...0.3.0) (2026-11-09)
+
+
+### Release-As
+
+* 0.3.0 ([81ffaa0](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/81ffaa01c84c972e0505530a86aa84324bd74f0a))
+
+
+### Features
+
+* update skill frontmatter ([#162](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/issues/162)) ([ccb0108](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/commit/ccb01087cd53d2b8d56d587d754c0b66e313254c))
+
 ## [0.3.0](https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin/compare/0.2.5...0.3.0) (2026-11-09)
 
 
