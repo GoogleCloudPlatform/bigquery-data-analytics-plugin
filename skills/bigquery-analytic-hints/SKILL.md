@@ -5,7 +5,7 @@ metadata:
   publisher: google
 description: >-
   After any BigQuery time-series, trend or exploratory analysis, or after running
-  an AI.* function, load this to append up to two-next step suggestions.
+  an AI.* function, load this to append up to two next-step suggestions.
   Recommends and routes to BigQuery AI capabilities for next-step data
   analysis. Use during exploratory data analysis, time-series or cohort pattern
   investigation, or text corpus exploration in BigQuery when the user has not
