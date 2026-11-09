@@ -276,7 +276,7 @@ The hand-authored skills in `skills/` are unaffected and still ship with the plu
 ## Additional Extensions
 
 Find additional extensions to support your entire software development lifecycle at https://github.com/gemini-cli-extensions, including:
-* [BigQuery Conversational Analytics](https://github.com/gemini-cli-extensions/bigquery-conversational-analytics)
+* [BigQuery Conversational Analytics](https://github.com/GoogleCloudPlatform/bigquery-conversational-analytics-plugin)
 * and more!
 
 ## Troubleshooting

@@ -21,7 +21,7 @@ The development process involves installing the extension locally into the Gemin
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/gemini-cli-extensions/bigquery-data-analytics.git
+    git clone https://github.com/GoogleCloudPlatform/bigquery-data-analytics-plugin.git
     cd bigquery-data-analytics
     ```
 
