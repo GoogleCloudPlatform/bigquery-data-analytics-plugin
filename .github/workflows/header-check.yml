@@ -32,4 +32,4 @@ jobs:
           persist-credentials: false
 
       - name: Check License Header
-        uses: apache/skywalking-eyes/header@de402d804643951e752b645b6e562c188470f68a # main
+        uses: apache/skywalking-eyes/header@fe2eeacf92602a1a5732b9e9cfa6b92e11c29a8d # main
