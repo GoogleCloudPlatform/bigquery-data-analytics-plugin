@@ -4,13 +4,14 @@ metadata:
   version: v1
   publisher: google
 description: >-
-  Load this when running any trend, statistical, exploratory analysis, or
+  Load this when running any BigQuery trend, statistical, exploratory analysis, or
   a BQ AI.* function, to append up to two next-step suggestions.
   Proactively suggests relevant built-in
   BigQuery AI functions (forecasting, anomaly detection, tabular prediction,
   change point analysis, key driver attribution, trend/seasonality
   decomposition, or semantic text classification) as concise follow-up actions.
-  Do not use for dataset or table administration, DDL/DML migrations, query performance
+  Do not use for for writing or looking up exact SQL syntax and function arguments,
+  dataset or table administration, DDL/DML migrations, query performance
   troubleshooting, or permission checks.
 ---
 
