@@ -4,12 +4,9 @@ metadata:
   version: v1
   publisher: google
 description: >-
-  After any BigQuery time-series, trend or exploratory analysis, or after running
-  an AI.* function, load this to append up to two next-step suggestions.
-  Recommends and routes to BigQuery AI capabilities for next-step data
-  analysis. Use during exploratory data analysis, time-series or cohort pattern
-  investigation, or text corpus exploration in BigQuery when the user has not
-  requested a specific AI function. Proactively suggests relevant built-in
+  Load this when running any BigQuery trend, statistical, exploratory analysis, or
+  a BQ AI.* function, to append up to two next-step suggestions.
+  Proactively suggests relevant built-in
   BigQuery AI functions (forecasting, anomaly detection, tabular prediction,
   change point analysis, key driver attribution, trend/seasonality
   decomposition, or semantic text classification) as concise follow-up actions.
