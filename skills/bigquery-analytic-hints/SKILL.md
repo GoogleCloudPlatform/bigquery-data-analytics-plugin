@@ -10,7 +10,7 @@ description: >-
   BigQuery AI functions (forecasting, anomaly detection, tabular prediction,
   change point analysis, key driver attribution, trend/seasonality
   decomposition, or semantic text classification) as concise follow-up actions.
-  Do not use for for writing or looking up exact SQL syntax and function arguments,
+  Do not use for writing or looking up exact SQL syntax and function arguments,
   dataset or table administration, DDL/DML migrations, query performance
   troubleshooting, or permission checks.
 ---
